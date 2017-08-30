@@ -1,23 +1,28 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+
+
+
 ====== Identefication of Boron-Nitrid ======
 Created Tuesday 22 August 2017
 
 I use mainly images from [[https://drive.google.com/drive/u/1/folders/0Bxgq_KwAosE0bzJCUkg3ZmdiLUE|Ayelet's folder]].
 
 I attempt to use the code from the [[Graphane ID|Graphane identefication.]] I used an image of what looks like a Boron Nitride flake:
-{{~/code/Spyder/MonolayerID/Img/Ayelet/Image_4200_monolayer_unverified.png?width=200}}
+{{~\Documents\GitHub\FlakeFinder\Image_4200_monolayer_unverified.png?width=265}}
 
 It is very hard to see the difference between the Boron Nitride monolayer and the substrate, even in black and white:
-{{~/code/Spyder/MonolayerID/Img/Ayelet/Image_4200_monolayer_unverified-grayscale.png}}
+{{~\Documents\GitHub\FlakeFinder\Image_4200_monolayer_unverified-grayscale.png}}
 Some graphs turn out well:
-{{~/code/Spyder/MonolayerID/Img/Ayelet/Graphs/Well-Behaved.png}}
+{{~\Documents\GitHub\FlakeFinder\Img\Ayelet\Graphs\Well-Behaved.png}}
 But the filter seems to underestimate the constrast, this can be also seen here:
-{{~/code/Spyder/MonolayerID/Img/Ayelet/Graphs/Underestimated_Constrast.png}}
+{{~\Documents\GitHub\FlakeFinder\Img\Ayelet\Graphs\Underestimated_Constrast.png}}
 And sometimes the results are very noisy:
-{{~/code/Spyder/MonolayerID/Img/Ayelet/Graphs/Some_Noise.png}}
+{{~\Documents\GitHub\FlakeFinder\Img\Ayelet\Graphs\Some_Noise.png}}
 Sometimes there is no visible trend:
-{{~/code/Spyder/MonolayerID/Img/Ayelet/Graphs/no-trend.png}}
+{{~\Documents\GitHub\FlakeFinder\Img\Ayelet\Graphs\no-trend.png}}
 But after histogram equalization we get a much clearer difference.
-{{~/code/Spyder/MonolayerID/Img/Ayelet/Image_4200_monolayer_unverified-equalized-grayscale.png?width=276}}
+{{~\Documents\GitHub\FlakeFinder\Image_4200_monolayer_unverified-equalized-grayscale.png?width=276}}
 Problem: The original signal has the right constrast but is so noisy that it is hard to see the drop. However, after histogram equalization it is very easy to see the difference.
 
 
