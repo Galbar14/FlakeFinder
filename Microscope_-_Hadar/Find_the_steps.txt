@@ -1,0 +1,5 @@
+====== Find the steps ======
+Created Wednesday 23 August 2017
+
+There is the problem of actually detecting the steps and finding the contrast drop. A few intersasting links:
+https://stackoverflow.com/questions/19714663/detect-steps-in-a-piecewise-constant-signal

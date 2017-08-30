@@ -1,0 +1,26 @@
+====== Graphane ID ======
+Created Tuesday 08 November 2016
+
+**The goal here is to reproduce the algorithem in the article to see if it might work for Bhor Nitride.**
+
+I wrote a python code that takes a cropped picture of a flake, example:
+{{~/code/Spyder/MonolayerID/Img/Devidash/G6-monolayer.png?width=100}}
+I then take the grayscale image:
+{{~/code/Spyder/MonolayerID/Img/Devidash/G6-monolayer-grayscale.png}}
+
+I then take each columb, and plot a graph of the gray levels. This graph is very noisy, so I fileter it using a butterworth filter, then find the minimum and maximum of the filtered signal.
+{{~/code/Spyder/MonolayerID/Img/Devidash/graphs/signal1.png}}
+Since the filter is not very fine, I avarage over all columbs:
+{{~/code/Spyder/MonolayerID/Img/Devidash/graphs/signal3.png}}
+{{~/code/Spyder/MonolayerID/Img/Devidash/graphs/signal4.png}}
+Some rows give results that do not fit very well:
+{{~/code/Spyder/MonolayerID/Img/Devidash/graphs/signal-bad.png}}
+{{~/code/Spyder/MonolayerID/Img/Devidash/graphs/signal-bad2.png}}
+But this is why I am avaraging. After avaraging the results of the difference between the minimum and maximum, I compared Raman verified images of monolayers and bilayers as well as images of graphite flakes on the silicone:
+
+{{~/code/Spyder/MonolayerID/Img/Devidash/graphs/Graphene-Graph.png}}
+
+I attempt to use the same code to check for samples of [[Identefication of Boron-Nitrid|Boron-Nitrid]]
+
+0.034
+

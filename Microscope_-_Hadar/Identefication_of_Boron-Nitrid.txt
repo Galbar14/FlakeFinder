@@ -1,0 +1,57 @@
+====== Identefication of Boron-Nitrid ======
+Created Tuesday 22 August 2017
+
+I use mainly images from [[https://drive.google.com/drive/u/1/folders/0Bxgq_KwAosE0bzJCUkg3ZmdiLUE|Ayelet's folder]].
+
+I attempt to use the code from the [[Graphane ID|Graphane identefication.]] I used an image of what looks like a Boron Nitride flake:
+{{~/code/Spyder/MonolayerID/Img/Ayelet/Image_4200_monolayer_unverified.png?width=200}}
+
+It is very hard to see the difference between the Boron Nitride monolayer and the substrate, even in black and white:
+{{~/code/Spyder/MonolayerID/Img/Ayelet/Image_4200_monolayer_unverified-grayscale.png}}
+Some graphs turn out well:
+{{~/code/Spyder/MonolayerID/Img/Ayelet/Graphs/Well-Behaved.png}}
+But the filter seems to underestimate the constrast, this can be also seen here:
+{{~/code/Spyder/MonolayerID/Img/Ayelet/Graphs/Underestimated_Constrast.png}}
+And sometimes the results are very noisy:
+{{~/code/Spyder/MonolayerID/Img/Ayelet/Graphs/Some_Noise.png}}
+Sometimes there is no visible trend:
+{{~/code/Spyder/MonolayerID/Img/Ayelet/Graphs/no-trend.png}}
+But after histogram equalization we get a much clearer difference.
+{{~/code/Spyder/MonolayerID/Img/Ayelet/Image_4200_monolayer_unverified-equalized-grayscale.png?width=276}}
+Problem: The original signal has the right constrast but is so noisy that it is hard to see the drop. However, after histogram equalization it is very easy to see the difference.
+
+
+
+==== Data ====
+
+
+===== Chip 2 =====
+
+{{./pasted_image005.png}}
+
+
+===== chip 3 =====
+{{./pasted_image004.png}}
+
+
+
+===== Directions =====
+
+* It seems there is a correlation here, but also the differences between monolayers and bilayers are not too big,  It also could be that due to noise the seperation will not be good enough. 
+
+	[ ] Try to better filter the signals - Wavelet transform for  for example [[https://www.google.co.il/url?sa=t&rct=j&q=&esrc=s&source=web&cd=4&ved=0ahUKEwiwuPK69-zVAhXndpoKHbF2BV4QFghHMAM&url=https%3A%2F%2Fwww.researchgate.net%2Ffile.PostFileLoader.html%3Fid%3D58a215def7b67e2f8c136854%26assetKey%3DAS%253A461398733004801%25401487017438422&usg=AFQjCNH8Y4o56QCzJFKw1ILogsqU9IOsUg|this.]]
+	[*] Try using the different channels
+			It seems that for both the graphane and Hbn there is [[Channel Graph for hBn|no sign change]]
+
+	[ ] Bilateral filtering based on histogram equalization
+	[ ] Can I estimate the error for the bars?
+	[ ] [[MoS]] looks visually similar. It seems for Mos the red channel stays negative while the green channel changes sign after the 3rd level. This can allow us to differenciate between mono and bilayers to polylayer.
+	[ ] Maybe one can differenciate between the 1 and 2 layers by looking at the increase between channels. 
+
+* If this method is good enough for now, the next step is to take a signal that makes up an entire row (columb) and try to find the  drops automatically. Then each drop can be analyzed and the location of the monolayer drops can be found.
+
+	[ ] The wavelet transform might help
+	[ ] Using the first derivative of a gaussian to differenciate with less noise 
+
+
+

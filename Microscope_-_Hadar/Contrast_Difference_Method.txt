@@ -1,0 +1,22 @@
+====== Contrast Difference Method ======
+Created Sunday 09 April 2017
+
+I tired to see if I can find a correlation of the contrast drop and the numbers of layers. Overall, the mean drop:
+number1: 7.24e-5
+number2: 4e-4
+number3: 2e-4
+number4: 5e-4
+
+
+===== Results from Devisash =====
+
+* Monolayer:  0.027
+* Monolayer - Bottom: 0.023
+* Bilayer: 0.054
+* Bilayer - bottom: 0.044
+* Yellow Graphite: 0.135
+* Blue Graphite: 0.016
+* Noise: 0.0022
+* Noise 2: 0.003
+* Noise With Flair: 0.006
+* Bilayer - Monolayer: 0.055

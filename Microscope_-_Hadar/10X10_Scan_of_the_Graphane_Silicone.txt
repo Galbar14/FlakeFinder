@@ -1,0 +1,72 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2016-09-27T14:50:13+03:00
+
+====== 10X10 Scan of the Graphane Silicone Using a Linear Model ======
+Created Tuesday 27 September 2016
+
+I measured 6 points to fit a plane model to the Graphane, at first by hand and then I used the autofocus algorithem to correct. 
+I then used code I wrote to scan a square of dimensions of about 3600X2700 [Micro - Meter], in order to estimate run time and test the method. 
+
+===== Scan Method =====
+
+=== The Points Chosen ===
+
+From analysing the data from hand scans I previusly made using the microscope, it seems that 6 points provide a plane fit with a low error rate. I did not check 
+yet if it is the minimal number of points needed, but the minimum number of points is 3 to define a plane, and realisticly we will most likely need at least 4 points
+to minimize errors, so 6 points is not a big number, especially because at least 3 of those points can be found and measured automaticly without user intervention
+(knowing the dimensions of the silicone, the 3 other corners can give the location of the 4th corner, and then from finding midpoints between two points we can 
+get additional two points). I chose points at the edge of the silicone to maximize the distance from most of the points on the silicone, and thus minimize error. 
+From the residuals of a graph I made from a simular measurment I estimated the error from the plane model to be about 5 [Micro-Meter] which I will correct 
+using the autofocus algorithem.
+
+=== The Autofocus Method ===
+
+I use a linear model obtained from the 6 points I have chosen to get an estimate for the right focus distance at eat point. Then, I scan a range of 5 [Micro - Meter] 
+around the presiction of the model at 2 [Micro Meter] steps, to minimize noise while maximizing scan resolution. According to benchmarks I made, this operaction 
+takes about 40 [Seconds]. 
+
+=== The Scan ===
+
+I scan a square of dimensions of about 36000X2700 [Micro - Meters], in windows of dimensions of 360X270 [Micro - Meters]. The squre have 10X10 blocks in it. 
+ 
+
+===== Scan Results =====
+
+The scan yielded 100 images, 80 of them were verified to be well focused by hand check. Out of the 20 images that could not be focused, I still need to investigate
+the reason why they could not be focused, because they seem to be pictures that can be focused. The reason for the failure may be a software bug, or a bad guess for the standard 
+deviation in the gaussian fit. I will attempt to fix this problem, but worst case scenario, we can go over those pictures again and perform an autofocus method that 
+will take slightly more time, and I estimate that at most we might have to spend an additional hour, which is still resonable (See runtime analysis for an extended descussion).
+
+Another problem I noticed is pictures that half of them are in focus and half is out of focus, probably because of significant height differences within the window. When I start 
+the image processing I will be able to know if this is a problem. Right now it is hard to find such pictures automatically, I found them by hand inspection. However, I did not 
+see many pictures like this, I only noticed about 3 such pictures. 
+
+=== Runtime Estimates ===
+I benchmarked the scan of the entire 10X10 block to take about 1.3 [Hours]. The entire silicone can be scanned using a block of 21X32 360X270 [Micro-Meter] windows, 
+so a 10X10 window represents a proportion of 0.15 of the total scan area, so assuming additional operations add negligable time, I estimate an entire scan to take 
+approximataly 8.66 [Hours]. 
+
+This does not include:
+1. The time we might need to post - process the 20% failed pictures, but even if we will need to, I do not think it will add more than an hour. 
+2. The time needed to make the plane model , but I do not think it should take more than 30 minuets in the worst case scenario.
+
+Overall it looks like this method can provide us with a runtime of less than 12 hours. 
+
+===== Conclusion =====
+
+Right now, the scan is estimated to run within the acceptable 12 hour time window, but with an error rate of about 20% out of focus images. There is also a problem of
+a few half out of focus images. I can keep working on lowering the error rate, or check an option of going back and doing a more time - intensive autofocus to fix the focus
+on the failed images.
+ 
+Possible point of improvement:
+
+* See if the 20% failure rate can be improved
+* Automatize the plane model making: write a code that asks the user to find and hand focus on 3 points and finds 3 additional points automaticly
+* The 3 images that only half of them are focused may be problematic, especially because it's hard to find them automaticaly. When I start the 
+image processing to find the mono - layers I will be able to know if this is a serius problem. 
+* Automatically straighten the silicone: right now, for optimal scan results the user must manualy make sure the silicone's sides are more or less parallel to the x and y axis. 
+This can be done automaticly using the stage's rotation funciton and some image processing.
+
+
+
