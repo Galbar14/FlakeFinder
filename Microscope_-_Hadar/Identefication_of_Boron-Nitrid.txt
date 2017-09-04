@@ -47,16 +47,21 @@ Problem: The original signal has the right constrast but is so noisy that it is 
 	[ ] Try to better filter the signals - Wavelet transform for  for example [[https://www.google.co.il/url?sa=t&rct=j&q=&esrc=s&source=web&cd=4&ved=0ahUKEwiwuPK69-zVAhXndpoKHbF2BV4QFghHMAM&url=https%3A%2F%2Fwww.researchgate.net%2Ffile.PostFileLoader.html%3Fid%3D58a215def7b67e2f8c136854%26assetKey%3DAS%253A461398733004801%25401487017438422&usg=AFQjCNH8Y4o56QCzJFKw1ILogsqU9IOsUg|this.]]
 	[*] Try using the different channels
 			It seems that for both the graphane and Hbn there is [[Channel Graph for hBn|no sign change]]
+			However, the red channel displays slightly more change - Maybe use the red channel?
 
 	[ ] Bilateral filtering based on histogram equalization
 	[ ] Can I estimate the error for the bars?
-	[ ] [[MoS]] looks visually similar. It seems for Mos the red channel stays negative while the green channel changes sign after the 3rd level. This can allow us to differenciate between mono and bilayers to polylayer.
+	[x] [[MoS]] looks visually similar. It seems for Mos the red channel stays negative while the green channel changes sign after the 3rd level. This can allow us to differenciate between mono and bilayers to polylayer.
+		This does not seem the same with hBn
 	[ ] Maybe one can differenciate between the 1 and 2 layers by looking at the increase between channels. 
+	[ ] Maybe a better exposure value will help.
 
 * If this method is good enough for now, the next step is to take a signal that makes up an entire row (columb) and try to find the  drops automatically. Then each drop can be analyzed and the location of the monolayer drops can be found.
 
 	[ ] The wavelet transform might help
 	[ ] Using the first derivative of a gaussian to differenciate with less noise 
+	[ ] Using the Canny edge detector and check pixels that are edge pixels
+
 
 
 
