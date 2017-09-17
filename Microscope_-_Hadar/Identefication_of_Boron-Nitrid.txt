@@ -56,12 +56,27 @@ Problem: The original signal has the right constrast but is so noisy that it is 
 	[ ] Maybe one can differenciate between the 1 and 2 layers by looking at the increase between channels. 
 	[ ] Maybe a better exposure value will help.
 
-* If this method is good enough for now, the next step is to take a signal that makes up an entire row (columb) and try to find the  drops automatically. Then each drop can be analyzed and the location of the monolayer drops can be found.
+* If this method is good enough for now, the next step is to apply to a signal that contains a couple of layers.
 
 	[ ] The wavelet transform might help
 	[ ] Using the first derivative of a gaussian to differenciate with less noise 
 	[ ] Using the Canny edge detector and check pixels that are edge pixels
 
+==== Hadar's plan ====
+1. Exfoliate hBN on PDMS
+2. Use software to differenciate thickness (Make the same graph)
+3. Transfer to SiO2
+4. Measure suing AFM
+5. Make a graph of contrast vs. AFM. We hope for a linear relationship.
 
+Bar - illan project:
+Using Indiaium Oxide
+Make indium oxide with hBn in the middle and graphite in the other side to controll electron density and thus cancell the columb interaction.
+
+==== Highlights ====
+
+1. Cite when using article data (even diagrams)
+2. Include raw data slides at the end
+3. Overlapping lines like the lines of the polyfit and the filtering need to be differenciated.
 
 

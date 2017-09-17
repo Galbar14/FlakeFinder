@@ -1,3 +1,6 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+
 ====== Channel Graph for hBn ======
 Created Tuesday 29 August 2017
 
